@@ -12,27 +12,29 @@ public class Gambler {
 		System.out.println("Enter your goal:-");
 		int goal=sc.nextInt();
 		int bets=0;
-		int wins=0;
+		int wins=0,loose=0;
+		int cashPrice = stake;
 		for(int i=0;i<trials;i++)
-			{
-				int cashPrice=stake;
-				while((cashPrice>0) &&(cashPrice<goal))
-					{
-						bets++;
-						if(Math.random()>0.5)
-							cashPrice++;
-							else
-								cashPrice--;
-						}
-					if(cashPrice==goal){
-						wins++;
-					}
-					
+		{
+			if ((cashPrice > 0) && (cashPrice < goal)) {	
+				bets++;
+				if (Math.random() > 0.5){
+					cashPrice++;
+				    wins++;
 				}
-			
-			System.out.println(wins+"wins of trials:"+trials);
-			System.out.println("percentageof wins:-"+100*wins/trials);
-			System.out.println("avg"+1*bets/trials);
+				else{
+					cashPrice--;
+				     loose++;
+				}
+			}
+			else
+				break;
+		}
+
+		System.out.println(wins+"wins of trials:"+trials);
+		System.out.println(loose+"loose of trials"+trials);
+		System.out.println("% of wins:-"+(wins*100)/trials);
+		System.out.println("% of loose:-"+(loose*100)/trials);
 		}
 }
 
