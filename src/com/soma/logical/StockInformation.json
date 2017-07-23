@@ -1,0 +1,15 @@
+[
+	{"name": "Sbi",
+     "noOfShare": 5,
+     "priceOfShare":10000
+	},
+	{"name": "StandardCharter",
+     "noOfShare": 10,
+     "priceOfShare":15000
+	},
+	{"name": "Andhra",
+     "noOfShare": 15,
+     "priceOfShare":20000
+	}
+]
+	
