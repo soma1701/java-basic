@@ -1,4 +1,4 @@
-package com.soma.logical;
+package com.soma.logical.main;
 
 public class StockPortfolio {
 	private String name;

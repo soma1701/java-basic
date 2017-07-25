@@ -1,9 +1,12 @@
-package com.soma.logical;
+package com.soma.logical.main;
 
 import java.util.Scanner;
 
-public class SumOfThree {
+import com.soma.logical.util.Utility;
+
+public class Triplet {
 	public static void main(String[] a){
+		Utility u=new Utility();	
 		Scanner sc=new Scanner(System.in);
 	    System.out.println("Enter no of elements:");
 	    int n=sc.nextInt();
@@ -12,24 +15,7 @@ public class SumOfThree {
 	    for(int i=0;i<n;i++){
 	    	b[i]=sc.nextInt();
 	    }
-	    	triplet(b,n);
-	    
-	}
-	    public static void triplet(int[] b,int n){
-	    	int count=0;
-	    	for(int i=0;i<n;i++){
-	    		for(int j=i+1;j<n-1;j++){
-	    			for(int k=j+1;k<n-2;k++){
-	    				if(b[i]+b[j]+b[k]==0){
-	    					System.out.println(b[i]+" "+b[j]+" "+b[k]);
-	    					count++;
-	    				}
-	    			}
-	    		}
-	    	}
-	    System.out.println("no of distinct triplet is:"+count);	
-	    
+	    	u.triplet(b,n);
 	}
 
 }
-

@@ -1,9 +1,12 @@
-package com.soma.logical;
+package com.soma.logical.main;
 
 import java.util.Scanner;
 
+import com.soma.logical.util.Utility;
+
 public class Gambler {
 	public static void main(String[] a){
+		Utility u=new Utility();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter stake amount:-");
 		int stake=sc.nextInt();
@@ -11,31 +14,9 @@ public class Gambler {
 		int trials=sc.nextInt();
 		System.out.println("Enter your goal:-");
 		int goal=sc.nextInt();
-		int bets=0;
-		int wins=0,loose=0;
-		int cashPrice = stake;
-		for(int i=0;i<trials;i++)
-		{
-			if ((cashPrice > 0) && (cashPrice < goal)) {	
-				bets++;
-				if (Math.random() > 0.5){
-					cashPrice++;
-				    wins++;
-				}
-				else{
-					cashPrice--;
-				     loose++;
-				}
-			}
-			else
-				break;
+		u.gamblerGame(stake,trials,goal);
 		}
-
-		System.out.println(wins+"wins of trials:"+trials);
-		System.out.println(loose+"loose of trials"+trials);
-		System.out.println("% of wins:-"+(wins*100)/trials);
-		System.out.println("% of loose:-"+(loose*100)/trials);
-		}
+		
 }
 
 	

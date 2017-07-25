@@ -1,27 +1,23 @@
-package com.soma.logical;
+package com.soma.logical.main;
 
 import java.util.Date;
+import java.util.Scanner;
+
+import com.soma.logical.util.Utility;
 
 public class StopWatch {
-	static Date date=new Date();
-    static long startTime=0;
-    static long endTime=0;
-    long elapsedTime=0;
-	public static long startTime() {
-		long startTime= date.getTime();
-		return startTime;
-		}
-	public static long endTime(){
-		long endTime=System.currentTimeMillis();
-		return endTime;
-	}
-	public static void elapsedTime(){
-		long elapsedTime=startTime-endTime;
-		System.out.println(elapsedTime);
-	}
 	public static void main(String[] a){
-		StopWatch.elapsedTime();
-		
+		Utility u=new Utility();
+		Scanner sc=new Scanner(System.in);
+		long startTime=0;
+		long endTime=0;
+		long elapsedTime=0;
+		long start=u.startTime();
+		System.out.println("StopWatch has been started, enter any no to stop");
+		int b=sc.nextInt();
+		long end=u.endTime();
+		u.elapsedTime(start,end);
+
 	}
 
 }
