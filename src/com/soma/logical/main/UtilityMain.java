@@ -11,8 +11,6 @@ public class UtilityMain{
 	    Utility u=new Utility();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter integer for binarysearch:");
-		
-		
-		
+				
 	}	
 }
