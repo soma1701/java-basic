@@ -17,7 +17,6 @@ public class StopWatch {
 		int b=sc.nextInt();
 		long end=u.endTime();
 		u.elapsedTime(start,end);
-
-	}
+   }
 
 }
