@@ -5,22 +5,10 @@ import java.util.Scanner;
 public class StackImpl {
 	Scanner sc=new Scanner(System.in);
 	 int top=0;
-	static int element;
+	static char element;
 	int stacksize;
-	int stackArr[] = null;
-<<<<<<< HEAD
-   public	StackImpl(int stacksize){
-	 this.stacksize=stacksize;
-	 this.stackArr=new int[getStacksize()];
-  }
+	char stackArr[] =new char[stacksize];
    
-=======
-    public	StackImpl(int stacksize){
-	 this.stacksize=stacksize;
-	 this.stackArr=new int[getStacksize()];
-   }
-    
->>>>>>> 452aa9f514014a64994dca95e266354a409c3c99
 	public int getTop() {
 		return top;
 	}
@@ -29,11 +17,11 @@ public class StackImpl {
 		this.top = top;
 	}
 
-	public int getElement() {
+	public char getElement() {
 		return element;
 	}
 
-	public void setElement(int element) {
+	public void setElement(char element) {
 		this.element = element;
 	}
 
@@ -45,11 +33,11 @@ public class StackImpl {
 		this.stacksize = stacksize;
 	}
 
-	public int[] getStackArr() {
+	public char[] getStackArr() {
 		return this.stackArr;
 	}
 
-	public void setStackArr(int[] stackArr) {
+	public void setStackArr(char[] stackArr) {
 		this.stackArr = stackArr;
 	}
 	public boolean isStackFull(){
@@ -60,7 +48,7 @@ public class StackImpl {
 		return top<0;
 		
 	}
-	public void insert(int element){
+	public void insert(char element){
 		if(isStackFull()){
 		
 			System.out.println("unable to insert");
@@ -70,7 +58,7 @@ public class StackImpl {
 			System.out.println("Enter the element into stack");
 		    for(int i=0;i<getStacksize()-1;i++){
 		    	
-		    	 element=sc.nextInt();
+		    	 element=(char) sc.nextInt();
 			System.out.println(this.stackArr[this.top]=element);
 			
 			
@@ -78,7 +66,7 @@ public class StackImpl {
 		    }
 		    }
 		}
-	public void delete(int element){
+	public void delete(char element){
 		if(isstackEmpty()){
 			System.out.println("unable to delete");}
 		else
@@ -93,15 +81,14 @@ public class StackImpl {
 			System.out.println(b);}
 			}
 	}
-<<<<<<< HEAD
 
-}
-=======
+
+
 	public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter size of an array:");
 		int stacksize=sc.nextInt();
-		StackImpl stack= new StackImpl(stacksize);
+		StackImpl stack= new StackImpl();
 		System.out.println("Press 1 for insertion:-");
 		System.out.println("Press 2 for deletion:-");
 		System.out.println("Enter your choice:-");
@@ -114,7 +101,7 @@ public class StackImpl {
 	                break;
 	    	case 2:
 	    		    System.out.println("Enter the element you want to delete");
-	                int del=sc.nextInt();
+	                char del=(char) sc.nextInt();
 	                stack.delete(del);
 	                break;
 	                default:
@@ -124,4 +111,4 @@ public class StackImpl {
 }
 }
 	
->>>>>>> 452aa9f514014a64994dca95e266354a409c3c99
+
