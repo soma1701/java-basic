@@ -8,11 +8,19 @@ public class StackImpl {
 	static int element;
 	int stacksize;
 	int stackArr[] = null;
+<<<<<<< HEAD
    public	StackImpl(int stacksize){
 	 this.stacksize=stacksize;
 	 this.stackArr=new int[getStacksize()];
   }
    
+=======
+    public	StackImpl(int stacksize){
+	 this.stacksize=stacksize;
+	 this.stackArr=new int[getStacksize()];
+   }
+    
+>>>>>>> 452aa9f514014a64994dca95e266354a409c3c99
 	public int getTop() {
 		return top;
 	}
@@ -85,5 +93,35 @@ public class StackImpl {
 			System.out.println(b);}
 			}
 	}
+<<<<<<< HEAD
 
 }
+=======
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter size of an array:");
+		int stacksize=sc.nextInt();
+		StackImpl stack= new StackImpl(stacksize);
+		System.out.println("Press 1 for insertion:-");
+		System.out.println("Press 2 for deletion:-");
+		System.out.println("Enter your choice:-");
+		int choice=sc.nextInt();
+	    while(true){
+	    	switch(choice){
+	    	case 1:
+	                for(int i=0;i<stacksize-1;i++){
+	                stack.insert(element);}
+	                break;
+	    	case 2:
+	    		    System.out.println("Enter the element you want to delete");
+	                int del=sc.nextInt();
+	                stack.delete(del);
+	                break;
+	                default:
+	                	System.out.println("you have entered wrong choice:-");
+	    }
+	    }
+}
+}
+	
+>>>>>>> 452aa9f514014a64994dca95e266354a409c3c99
