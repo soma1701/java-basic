@@ -145,6 +145,20 @@ public class LinkList_Utility {
 		 		return -1;
 		 		
 		 	}
+		 	public void insertAtStart(int data)
+		 	{
+		 		Node node =new Node();
+		 		node.setData1(data);
+		 		LinkList.setSize(LinkList.getSize()+1);
+		 		if(LinkList.getStart()==null)
+		 		{
+		 			LinkList.setStart(node);
+		 			LinkList.setEnd(LinkList.getStart());
+		 		}else{
+		              node.setNext(LinkList.getStart());
+		              LinkList.setStart(node);
+		 		}
+		 	}
 
 
 	

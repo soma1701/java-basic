@@ -1,5 +1,8 @@
 package com.soma.logical.util;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -7,6 +10,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,6 +19,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.soma.logical.main.StockPortfolio;
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
 public class Utility {
 	public  void checkAnagram(String s, String s1) {
@@ -324,9 +329,9 @@ public class Utility {
 		long endTime=System.currentTimeMillis();
 		return endTime;
 	}
-	public void elapsedTime(long startTime,long endTime){
+	public long elapsedTime(long startTime,long endTime){
 		long elapsedTime=(endTime-startTime)/1000;
-		System.out.println("elapsed time in sec:"+elapsedTime);
+		return elapsedTime;
 	}
 	public void readIntArray(int n,int[] i,Scanner sc){
 		for(int j=0;j<n;j++){
@@ -401,31 +406,50 @@ public class Utility {
 			System.out.print(s[i]+" ");
 	    }System.out.println();
 	}
-	public String[] bubbleSortString(String input){
-		String[] inputArr=input.split(" ");
+	public String[] bubbleSortString(String[] input){
 		String temp="";
-		for(int i=0;i<inputArr.length;i++){
-			for(int j=i+1;j<inputArr.length;j++){
-	          if(inputArr[i].compareTo(inputArr[j])>0){
-	        	  temp=inputArr[i];
-	        	  inputArr[i]=inputArr[j];
-	        	  inputArr[j]=temp;
+		for(int i=0;i<input.length;i++){
+			for(int j=i+1;j<input.length;j++){
+	          if(input[i].compareTo(input[j])>0){
+	        	  temp=input[i];
+	        	  input[i]=input[j];
+	        	  input[j]=temp;
 	          }
 			}
-		}return inputArr;
+		}return input;
 	}
-	public String[] insertionSortString(String input){
-		String[] inputArr=input.split(" ");
+	public String[] insertionSortString(String[] input){
 		String temp="";
-		for(int i=1;i<inputArr.length;i++){
+		for(int i=1;i<input.length;i++){
 			for(int j=i;j>0;j--){
-	          if(inputArr[j-1].compareTo(inputArr[j])>0){
-	        	  temp=inputArr[j-1];
-	        	  inputArr[j-1]=inputArr[j];
-	        	  inputArr[j]=temp;
+	          if(input[j-1].compareTo(input[j])>0){
+	        	  temp=input[j-1];
+	        	  input[j-1]=input[j];
+	        	  input[j]=temp;
 	          }
 			}
-		}return inputArr;
+		}return input;
 	}
+	public String[] FetchWordsFrom(File file){
+		StringBuilder sb=new StringBuilder();
+	   	Scanner scnr = null;
+		try {
+			scnr = new Scanner(file);
+		} catch (FileNotFoundException e) {
+		
+			e.printStackTrace();
+		}
 	
+	 	String s="";
+	 	while(scnr.hasNextLine()){
+	 		sb.append(scnr.nextLine());
+	 		sb.append(" ");
+	 		s=sb.toString();
+	 	}
+	String[] words = s.split(" ");
+	return words;
+	}
+	public int[] FetchIntegerFromFile(File file){
+		ArrayList<Integer>
+	}
 }

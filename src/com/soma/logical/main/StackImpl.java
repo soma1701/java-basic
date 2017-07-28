@@ -7,7 +7,14 @@ public class StackImpl {
 	 int top=0;
 	static char element;
 	int stacksize;
-	char stackArr[] =new char[stacksize];
+
+
+	char stackArr[] = null;
+   public	StackImpl(int stacksize){
+	 this.stacksize=stacksize;
+	 this.stackArr=new char[getStacksize()];
+  }
+
    
 	public int getTop() {
 		return top;
@@ -48,18 +55,20 @@ public class StackImpl {
 		return top<0;
 		
 	}
-	public void insert(char element){
+
+	public void insert(char[] element){
 		if(isStackFull()){
 		
 			System.out.println("unable to insert");
 		}
 		else{
-			
-			System.out.println("Enter the element into stack");
-		    for(int i=0;i<getStacksize()-1;i++){
+			this.top=0;
+//			System.out.println("Enter the element into stack");
+		    for(int i=0;i<element.length;i++){
 		    	
-		    	 element=(char) sc.nextInt();
-			System.out.println(this.stackArr[this.top]=element);
+//		    	 element[i]=(char) sc.nextInt();
+			System.out.println(this.stackArr[this.top]=element[i]);
+
 			
 			
 		    this.top++;
@@ -81,14 +90,19 @@ public class StackImpl {
 			System.out.println(b);}
 			}
 	}
+	public void show(){
+		for(int i=0;i<stackArr.length;i++){
+			System.out.print(stackArr[i]);
+		}
+	}
 
 
 
-	public static void main(String args[]){
+	/*public static void main(String args[]){
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter size of an array:");
 		int stacksize=sc.nextInt();
-		StackImpl stack= new StackImpl();
+		StackImpl stack= new StackImpl(stacksize);
 		System.out.println("Press 1 for insertion:-");
 		System.out.println("Press 2 for deletion:-");
 		System.out.println("Enter your choice:-");
@@ -108,7 +122,7 @@ public class StackImpl {
 	                	System.out.println("you have entered wrong choice:-");
 	    }
 	    }
-}
+}*/
 }
 	
 

@@ -12,7 +12,7 @@ public class UsortedList {
 		Utility u=new Utility();
 		Scanner sc=new Scanner(System.in);
 		LinkList_Utility lu=new LinkList_Utility();
-		File file=new File("src/resource/test.txt");
+		File file=new File("java-basic/src/resource/test.txt");
 		String[] words=u.FetchWordsFrom(file);
 		System.out.println("fetching data from file:-");
 		u.printStringArr(words);
@@ -30,7 +30,7 @@ public class UsortedList {
 			lu.insertAtStart(search);
 			lu.show();
 		}else{
-			System.out.println("sord is found at"+result+"and remove from list");
+			System.out.println("word is found at" +result+"and remove from list");
 			lu.removeFromPosition(result);
 			lu.show();
 
