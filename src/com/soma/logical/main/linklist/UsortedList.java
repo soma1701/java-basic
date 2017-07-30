@@ -12,7 +12,7 @@ public class UsortedList {
 		Utility u=new Utility();
 		Scanner sc=new Scanner(System.in);
 		LinkList_Utility lu=new LinkList_Utility();
-		File file=new File("java-basic/src/resource/test.txt");
+		File file=new File("src/resource/unsorted.txt");
 		String[] words=u.FetchWordsFrom(file);
 		System.out.println("fetching data from file:-");
 		u.printStringArr(words);
@@ -35,8 +35,7 @@ public class UsortedList {
 			lu.show();
 
 		}
-
-     
+    
 	}
 
 }

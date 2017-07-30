@@ -1,15 +1,14 @@
 [
-	{"name": "Sbi",
-     "noOfShare": 5,
-     "priceOfShare":10000
+	{"name":"sbi",
+	  "noOfShare":2,
+	   "priceOfShare":10000,
 	},
-	{"name": "StandardCharter",
-     "noOfShare": 10,
-     "priceOfShare":15000
+	{"name":"kotak",
+	  "noOfShare":3,
+	   "priceOfShare":20000,
 	},
-	{"name": "Andhra",
-     "noOfShare": 15,
-     "priceOfShare":20000
-	}
+	{"name":"indian",
+	  "noOfShare":4,
+	   "priceOfShare":30000,
+	},
 ]
-	

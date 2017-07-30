@@ -1,0 +1,22 @@
+[ 
+	{
+	"productName":"rice"
+	"brandName":"indiagate",
+	"weight": 5,
+	"price": 56,
+	},
+	
+	{
+	"productName":"pulses"
+	"brandName":"abc",
+	"weight": 5,
+	"price": 56,
+	},
+	
+	{
+	"productName":"wheat"
+	"brandName":"kohinoor",
+	"weight": 5,
+	"price": 56,
+	}
+]

@@ -35,20 +35,7 @@ public class LinkList_Utility {
 		 		}
 		 		LinkList.setSize(LinkList.getSize()+1);
 		 	}
-          public void insertAtEnd(int data1){
-		 		
-		 		Node node=new Node();
-		 		node.setData1(data1);
-		 		if(LinkList.getEnd()==null)
-		 		{
-		 			LinkList.setEnd(node);
-		 			LinkList.setStart(node);
-		 		}else{
-		 			LinkList.getEnd().setNext(node);
-		 			LinkList.setEnd(node);
-		 		}
-		 		LinkList.setSize(LinkList.getSize()+1);
-		 	}
+        
 		 	public void insertAtPosition(String data,int position){
 		 		LinkList.setSize(LinkList.getSize()+1);
 		 		Node node=new Node();
@@ -132,35 +119,19 @@ public class LinkList_Utility {
 		 		return -1;
 
 		 	}
-		 	public int search(int input){
-		 		int i=0;
+		 	//method for sorted link list which will return index to insert data
+		 	public int fetchPosition(int data){
+		 		int position=0;
 		 		Node ptr=LinkList.getStart();
-		 		while(ptr!=null){
-		 			i++;
-		 			if(ptr.getData1()==input){
-		 				return i;
+		 		for(int i=0;i<LinkList.getSize();i++,position++){
+		 			if(data < Integer.parseInt(ptr.getData())){
+		 				return position;
+		 			}else{
+		 				ptr = ptr.getNext();
 		 			}
-		 			ptr=ptr.getNext();
 		 		}
-		 		return -1;
-		 		
+		 		return position;
 		 	}
-		 	public void insertAtStart(int data)
-		 	{
-		 		Node node =new Node();
-		 		node.setData1(data);
-		 		LinkList.setSize(LinkList.getSize()+1);
-		 		if(LinkList.getStart()==null)
-		 		{
-		 			LinkList.setStart(node);
-		 			LinkList.setEnd(LinkList.getStart());
-		 		}else{
-		              node.setNext(LinkList.getStart());
-		              LinkList.setStart(node);
-		 		}
-		 	}
-
-
 	
 }
 

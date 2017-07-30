@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class StackImpl {
 	Scanner sc=new Scanner(System.in);
-	 int top=0;
-	static char element;
-	int stacksize;
+	static int top=-1;
+     char element;
+	 int stacksize;
+	 char[] stackArr;
 
 
-	char stackArr[] = null;
    public	StackImpl(int stacksize){
 	 this.stacksize=stacksize;
 	 this.stackArr=new char[getStacksize()];
@@ -56,39 +56,22 @@ public class StackImpl {
 		
 	}
 
-	public void insert(char[] element){
+	public void insert(char element){
 		if(isStackFull()){
 		
 			System.out.println("unable to insert");
-		}
-		else{
-			this.top=0;
-//			System.out.println("Enter the element into stack");
-		    for(int i=0;i<element.length;i++){
-		    	
-//		    	 element[i]=(char) sc.nextInt();
-			System.out.println(this.stackArr[this.top]=element[i]);
-
-			
-			
-		    this.top++;
+		}else{
+			this.top++;
+			System.out.print(this.stackArr[this.top]=element);
 		    }
-		    }
-		}
-	public void delete(char element){
+	}
+	public void delete(){
 		if(isstackEmpty()){
-			System.out.println("unable to delete");}
-		else
-			{
-			top--;
-			stackArr[top]=0;
-			System.out.println("after deleting element");
-			int temp=top;
-			for(int i=0;i<top;i++){
-				temp=temp-1;
-			int b=stackArr[temp];
-			System.out.println(b);}
-			}
+			System.out.println("unable to delete");
+		}else{
+			  this.stackArr[top]=0;
+			  this.top--;
+		 }
 	}
 	public void show(){
 		for(int i=0;i<stackArr.length;i++){
