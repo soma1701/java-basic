@@ -1,0 +1,28 @@
+[
+{ "doctorName":"prashanta",
+  "doctorId":1,
+  "specialization":"cardiology",
+  "availability":8,
+  },
+  { "doctorName":"prashanta",
+  "doctorId":2,
+  "specialization":"cardiology",
+  "availability":8,
+  },
+  { "doctorName":"prashanta",
+  "doctorId":3,
+  "specialization":"cardiology",
+  "availability":8,
+  },
+  { "doctorName":"prashanta",
+  "doctorId":4,
+  "specialization":"cardiology",
+  "availability":8,
+  }
+  { "doctorName":"prashanta",
+  "doctorId":5,
+  "specialization":"cardiology",
+  "availability":8,
+  }
+  ]
+  
