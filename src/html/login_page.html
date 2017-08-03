@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>
+Welcome to log in page</title>
+<style>
+body{ 
+
+/* background-color:rgb(221,124,221);text-align:center */
+}
+ #u01{text-align:center;padding:1px;
+}
+#p01{ text-align:center;padding:1px
+}
+h{ background-color:blue ;font-size:30px; text-align:center; padding:20px
+}
+#b01{background-color:light blue; text-align:center; padding:10px; border:10px
+}
+
+</style>
+<script>
+function test(){
+	var name = document.getElementById("u011").value
+	var pass = document.getElementById("p011").value
+	alert("name ::"+name);
+}
+</script>
+</head>
+<body >
+<div style="width:100%;background-color: red">
+<div style="background-color: #87D233;width:400px;margin: ;padding: 10px 10px 10px 10px;margin: 10px 10px 10px 10px; border: 10px solid blue"	>
+<div><h> Please Log in here</h></div><br><br><br>
+<div> <input style="text-align:left" id="u011" type="text" name="username" value="Email id"></div><br>
+<div> <input style="text-align:left" id="p011" type="password" name="password" value="password"></div><br>
+<div> <input  type="checkbox" name="forgotpassword">Remember me</div><br><br>
+<input id="b01" type="button" name="submit" value="Submit" onClick="test()"><br>
+<a href=""> forgot my password</a><br><br>
+<a href=""> Company Registration</a></div>
+</div>
+</body></html>
