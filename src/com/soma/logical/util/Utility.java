@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +33,8 @@ public class Utility {
 	private final String REGEX_MOBILE_NO = "xxxxxxxxxx";
 	private final String REGEX_DATE = "12/06/2016";
 	
+//	Regex pattern matcher match the string and replace the regex pattern with user details.
+
 	public String convertString(UserDetails userDetails,String message){
 		Pattern p = Pattern.compile(REGEX_NAME);
 		Matcher m = p.matcher(message); 
@@ -51,6 +54,7 @@ public class Utility {
 
 		return message;
 	}
+//	method for checking String is anagram or not
 	public  void checkAnagram(String s, String s1) {
 		int count=0;
 		if(s.length()==s1.length()){
@@ -67,6 +71,7 @@ public class Utility {
 		}else
 			System.out.println("not anagram");
 	}
+//	method to read integer array
 	public void readIntegerArray(int row, int col, Scanner sc) {
 		int[][] b=new int[row][col];
 		System.out.println("enter"+row*col+"elements");
@@ -80,6 +85,7 @@ public class Utility {
 			System.out.println("Enter integer no only");
 		}
 	}
+//	method to write integer array on file
 	public void printIntArrayOnFile(int[][] b,int row, int col, PrintWriter printwriter){
 		System.out.println("go to file to see array:");
 		for(int i=0;i<row;i++){
@@ -92,6 +98,7 @@ public class Utility {
 		printwriter.flush();
 		printwriter.close();
 	}
+//	method to read double array
 	public  void readDoubleArray(int row, int col, Scanner sc) {
 		double[][] b=new double[row][col];
 		System.out.println("enter"+row*col+"elements");
@@ -105,6 +112,7 @@ public class Utility {
 			System.out.println("Enter double data type only");
 		}
 	}
+//	method to write arry on file
 	public void printDoubleArrayOnFile(double[][] b,int row, int col, PrintWriter printwriter){
 		System.out.println("go to file to see array:");
 		for(int i=0;i<row;i++){
@@ -118,7 +126,7 @@ public class Utility {
 		printwriter.flush();
 		printwriter.close();
 	}
-	
+//	method to read boolean array 
 	public  void readBooleanArray(int row, int col, Scanner sc) {
 		boolean[][] b=new boolean[row][col];
 		System.out.println("enter"+row*col+"elements");
@@ -132,6 +140,7 @@ public class Utility {
 			System.out.println("Enter boolean data type only");
 		}
 	}
+//	method to write boolean array on file using printwriter
 	public void printBooleanArrayOnFile(boolean[][] b,int row, int col, PrintWriter printwriter){
 		System.out.println("print array:");
 		for(int i=0;i<row;i++){
@@ -145,11 +154,13 @@ public class Utility {
 		printwriter.flush();
 		printwriter.close();
 	}
+//	method to generate random number
 	public int generateRandomCoupon(int n){
 		Random r=new Random();
 		return r.nextInt(n);
 
 	}
+//	method to generate distinct value
 	public int collect(int n){
 		int counter=0;
 		int distinctValue=0;
@@ -164,6 +175,7 @@ public class Utility {
 		}
 		return counter++;
 	}
+//	method to print no of distinct triplet
 	public void triplet(int[] b,int n){
 		int count=0;
 		for(int i=0;i<n;i++){
@@ -179,6 +191,7 @@ public class Utility {
 		System.out.println("no of distinct triplet is:"+count);	
 
 	}
+//	method to print harmonic number
 	public void findHarmonicNo(int n)
 	   {
 	    int harmonicNo=0;
@@ -189,7 +202,7 @@ public class Utility {
 	   }
 
 
-	
+//	reading data from file and return list of data
 	public static ArrayList<StockPortfolio> fetchDataFromFile() {
 		ArrayList<StockPortfolio> alStockPortfolios = new ArrayList<>();
 		JSONParser parser= new JSONParser();
@@ -208,6 +221,7 @@ public class Utility {
 		}
 		return alStockPortfolios;
 	}
+//	method to return all product details onto file
 	public static void processData(ArrayList<StockPortfolio> alStockPortfolios) {
 		try {
 			FileWriter writer=new FileWriter(new File("src/resource/stockportFolioOutput.json"));
@@ -230,6 +244,7 @@ public class Utility {
 		e.printStackTrace();
 		}
 	}
+//	method to check leap year
 	public void checkLeapYear(int year) {
 	    int count=1;
 	    int temp=year;
@@ -249,7 +264,7 @@ public class Utility {
 			System.out.println("please enter atleast 4 digit no to find leap year");
 		}
 }
-
+//  method to print array of letters
 	public void readArray(String s){
 		String[] s1=s.split("");
 		System.out.println("reading string array:-");
@@ -257,6 +272,7 @@ public class Utility {
 			System.out.print(s1[i]);
 		}System.out.println();
 	}
+//	method for insertion sort
 	public void insertionSort(String[] s1) {
         for(int i=0;i<s1.length;i++){
         	Arrays.sort(s1);
@@ -264,6 +280,7 @@ public class Utility {
 		}
 	
     }
+//	method to determine your pecentage of win or loss in gambler game
 	public void gamblerGame(int stake,int trials,int goal){
 		int bets=0;
 		int wins=0,loose=0;
@@ -289,6 +306,7 @@ public class Utility {
 		System.out.println("% of wins:-"+(wins*100)/trials);
 		System.out.println("% of loose:-"+(loose*100)/trials);
 		}
+//	method to check percentage of head n tail
 	public void checkPercOfHnT(int n){
 		int h = 0;
 		int t = 0;
@@ -307,7 +325,7 @@ public class Utility {
 		}
 	
 	}
-	
+//	method to return table of number,that number is power of two
 	public int checktable(int powerOfTwo) {
 		int table=0;
 		for(int i=1;i<=powerOfTwo;i++){
@@ -315,7 +333,7 @@ public class Utility {
 		}
 		return table;
 	}
-
+//  method to return number, that is power of two
 	public int checkPowerOfTwo(int n) {
 		int powerOfTwo=1;
 		if(n==0){
@@ -329,6 +347,7 @@ public class Utility {
 		
 		return powerOfTwo;
 	    }
+//	method to replace username as your name
 	public void replaceString(String s1){
 		String s="Hello username, How are you?";
 		if(s1.length()>=3){
@@ -340,28 +359,34 @@ public class Utility {
 		}
 		
 	}
+//	return start time
 	public long startTime() {
 		long startTime=System.currentTimeMillis();
 		return startTime;
 		}
+//	return end time
 	public long endTime(){
 		long endTime=System.currentTimeMillis();
 		return endTime;
 	}
+//	return total elapsed time
 	public long elapsedTime(long startTime,long endTime){
 		long elapsedTime=(endTime-startTime)/1000;
 		return elapsedTime;
 	}
+//	reading integer array
 	public void readIntArray(int n,int[] i,Scanner sc){
 		for(int j=0;j<n;j++){
 			i[j]=sc.nextInt();
 		}
 	}
+//	return integer array
 	public void printIntArray(int[] i){
 		for(int j=0;j<i.length;j++){
 			System.out.print(i[j]+" ");
 		}
 	}
+// implementation of binary search which takes integer input
    public int binarySearchInteger(int[] arr,int start,int end,int search){
 		int found=0;
 		if(start>end){
@@ -378,6 +403,7 @@ public class Utility {
 		}
 		return found;
 	}
+// implementation of insertion sort
    public int[] insertionSortInt(int[] input){
 	   for(int i=1;i<input.length;i++){
 		   for(int j=i;j>0;j--){
@@ -389,6 +415,7 @@ public class Utility {
 		   }
 	   }return input;
    }
+// implementation of insertion sort
    public int[] bubbleSortInt(int[] input){
 		for(int i=0;i<input.length;i++){
 			for(int j=i+1;j<input.length;j++){
@@ -402,6 +429,7 @@ public class Utility {
 		}
 		return input;
 	}
+//   // implementation of binary search which takes String as input
 	public int binarySearchString(String[] s,int start,int end,String search){
 		start=0;
 		end=s.length;
@@ -420,11 +448,13 @@ public class Utility {
 
 		return -1;
 	}
+//	method for printing a string array
 	public void printStringArr(String[] s) {
 		for(int i=0;i<s.length;i++){
 			System.out.print(s[i]+" ");
 	    }System.out.println();
 	}
+//	implementation of buble sort which takes string as input and return string aaray
 	public String[] bubbleSortString(String[] input){
 		String temp="";
 		for(int i=0;i<input.length;i++){
@@ -437,6 +467,7 @@ public class Utility {
 			}
 		}return input;
 	}
+//	implementation of insertion sort which takes string as input and return string aaray
 	public String[] insertionSortString(String[] input){
 		String temp="";
 		for(int i=1;i<input.length;i++){
@@ -449,6 +480,7 @@ public class Utility {
 			}
 		}return input;
 	}
+//	printing array of words from text file
 	public String[] FetchWordsFrom(File file){
 		StringBuilder sb=new StringBuilder();
 	   	Scanner scnr = null;
@@ -469,10 +501,25 @@ public class Utility {
 	scnr.close();
 	return words;
 	}
+
+	//Function take String in dd/mm/yyyy format and return Date Object
+	public Date printDate(String date){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+		try{
+			return sdf.parse(date);
+		}
+		catch(ParseException pe){
+			return null;
+		}
+	}
+
+
+//	method to get date format
 	public String getFormatedDate(Date date) {
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/mm/yyyy");
 		return sdf.format(date);
 	}
+//	fetching data from file and return as string format
 	public String FetchDataFromFile(File file) {
 		StringBuilder sb=new StringBuilder();
 		try {
@@ -485,6 +532,7 @@ public class Utility {
 		}
 		return sb.toString();
 	}
+//	method to inserting element at start
 	public void insertAtStart(HashLinkList objLinkList,int data){
 		Node node =new Node();
 		node.setData(String.valueOf(data));
@@ -497,6 +545,7 @@ public class Utility {
 			objLinkList.setStart(node);
 		}
 	}
+//	methos to search
 	public boolean  search(int data, HashLinkList hashLinkList) {
 		boolean isFound=false;
         Node ptr=hashLinkList.getStart();
@@ -509,12 +558,15 @@ public class Utility {
         }
         return isFound;
 	}
+//	method to check queue is full or not
 	public boolean isQueueFull(Queue objQueue){
 		return objQueue.getRare()==objQueue.getArrOueue().length;
 	}
+//	checking queue is empty or not
 	public boolean isQueueEmpty(Queue objQueue){
 		return objQueue.getRare()==-1;
 	}
+//	method to enqueue
 	public void enqueue(Queue objQueue,String data){
 		if(isQueueFull(objQueue)){
 			System.out.println("queue is already full");
@@ -524,6 +576,7 @@ public class Utility {
 			objQueue.getArrOueue()[objQueue.getRare()]=data;
 		}
 	}
+//	method to dequeue
 	public String dequeue(Queue objQueue){
 		String data="";
 		if(isQueueEmpty(objQueue)){
